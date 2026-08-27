@@ -1,0 +1,1 @@
+hw.module @Bar0(in %0: i1) {

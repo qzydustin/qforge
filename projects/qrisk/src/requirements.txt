@@ -1,0 +1,7 @@
+matplotlib==3.10.9
+numpy==2.4.4
+scipy==1.17.1
+qiskit==2.4.1
+qiskit-aer==0.17.2
+qiskit-ibm-runtime==0.46.1
+pytest==9.0.3

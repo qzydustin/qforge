@@ -1,0 +1,25 @@
+# Credentials and local IBM Quantum configuration
+quantum_config.json
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated experiment data and private hardware traces
+verified/
+candidate_groups/
+analysis/_out/
+results/
+*.log
+config_tmp.json
+
+# Python and editor state
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+tmp/

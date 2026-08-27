@@ -1,0 +1,50 @@
+{
+  "input_file": "Code-Mutation-Engine/Code-Mutation-Engine/demo/dependency_guided/input.py",
+  "output_file": "Code-Mutation-Engine/Code-Mutation-Engine/demo/dependency_guided/result_no_variable.py",
+  "steps": 6,
+  "seed": null,
+  "operators": [
+    "keyword",
+    "attribute",
+    "function"
+  ],
+  "mutations": [
+    {
+      "operator": "ParamRenameMutator",
+      "node": "Line 13: Renamed function parameter vip -> mutated_vip_4100",
+      "step": 0,
+      "line": 13
+    },
+    {
+      "operator": "ParamRenameMutator",
+      "node": "Line 21: Renamed function parameter user -> mutated_user_9368",
+      "step": 1,
+      "line": 21
+    },
+    {
+      "operator": "AttributeRenameMutator",
+      "node": "Line 13: Renamed attribute vip -> mutated_vip_1994",
+      "step": 2,
+      "line": 13
+    },
+    {
+      "operator": "ParamRenameMutator",
+      "node": "Line 21: Renamed function parameter mutated_user_9368 -> mutated_mutated_user_9368_4980",
+      "step": 3,
+      "line": 21
+    },
+    {
+      "operator": "ParamRenameMutator",
+      "node": "Line 21: Renamed function parameter mutated_mutated_user_9368_4980 -> mutated_mutated_mutated_user_9368_4980_6783",
+      "step": 4,
+      "line": 21
+    },
+    {
+      "operator": "KeywordArgValueMutator",
+      "node": "Line 39: Changed keyword argument value vip = False -> True",
+      "step": 5,
+      "line": 39
+    }
+  ],
+  "mode": "standard"
+}

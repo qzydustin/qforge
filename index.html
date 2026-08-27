@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="QForge scopes a secure, open ecosystem for robust quantum compilation: tools that find, test, reduce, and evaluate execution-dependent quantum-software failures, plus the governance, provenance, and community plan a durable ecosystem needs." />
+    <meta name="theme-color" content="#07111f" />
+    <meta property="og:title" content="QForge — A Secure Open Ecosystem for Robust Quantum Compilation" />
+    <meta property="og:description" content="The compiler that lowers a circuit to noisy hardware is the trust boundary of quantum computing. QForge turns robustness tooling into shared, secure, vendor-neutral infrastructure." />
+    <meta property="og:type" content="website" />
+    <title>QForge — Secure Open Ecosystem for Robust Quantum Compilation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="QForge home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>QForge</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" aria-label="Main navigation">
+        <a href="#projects">Projects</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#roadmap">Roadmap</a>
+        <a class="nav-cta" href="https://github.com/qzydustin/qforge" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> PESOSE Track 1 · Scoping a secure open-source ecosystem</p>
+          <h1>The compiler is the <em>trust boundary.</em></h1>
+          <p class="hero-intro">
+            A quantum computer only returns trustworthy answers if the compiler
+            that lowers a circuit to hardware preserves its behavior on a noisy
+            device. Today that layer is fragmented across vendor stacks, and its
+            noise models are blind to execution-dependent error. QForge turns
+            robustness tooling into shared, secure, vendor-neutral infrastructure.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">Explore the tools</a>
+            <a class="button secondary" href="#roadmap">See how it fits</a>
+          </div>
+          <dl class="hero-stats" aria-label="Ecosystem summary">
+            <div><dt>24–45%</dt><dd>Excess-error drop, IBM Heron r2</dd></div>
+            <div><dt>04</dt><dd>Founding open-source tools</dd></div>
+            <div><dt>03</dt><dd>Partner institutions</dd></div>
+          </dl>
+        </div>
+        <div class="hero-visual" aria-label="A connected ecosystem of four software projects around a shared pass framework">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="core"><span>QF</span><small>QFORGE</small></div>
+          <div class="node node-1"><b>Q</b><span>QRisk</span></div>
+          <div class="node node-2"><b>Δ</b><span>QDiff</span></div>
+          <div class="node node-3"><b>2→1</b><span>DuoReduce</span></div>
+          <div class="node node-4"><b>α</b><span>Argus</span></div>
+        </div>
+      </section>
+
+      <section class="mission section" id="ecosystem">
+        <p class="section-label">01 / The problem we scope</p>
+        <div class="mission-grid">
+          <h2>Robustness knowledge is stuck in one lab at a time.</h2>
+          <div>
+          <p>Production quantum compilers model noise as calibration-derived costs on individual gates. They miss <em>execution context</em>: short, ordered gate sequences on specific physical-qubit neighborhoods that inflate error even when every gate is well calibrated. A four-gate pattern on a coupled pair, with no unusual per-gate error, measurably degrades results.</p>
+          <p>The seed tool, QRisk, isolates these recurring patterns from real hardware and links their removal to 24–45% lower excess error across three IBM Heron r2 backends. But a mitigation discovered in one lab does not become infrastructure the field can reuse and trust — there is no vendor-neutral pass interface, no governance, and no security model for a compiler pass whose correctness is <em>statistical and drifts with calibration</em>. QForge is a one-year effort to scope that ecosystem: architecture, governance and licensing, a security and provenance plan, and a community strategy.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="projects section" id="projects">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">02 / Founding projects</p>
+            <h2>Four tools, one compilation-reliability pipeline</h2>
+          </div>
+          <p>Reliable quantum compilation is a pipeline. Each founding project owns one stage; together they are the starting point QForge builds a governed ecosystem around.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card featured">
+            <div class="card-top"><span class="project-index">01 · Find</span><span class="status">Quantum-native</span></div>
+            <div class="project-icon">Q</div>
+            <h3>QRisk</h3>
+            <p>Mines recurring, backend-specific abnormal circuit patterns from real hardware runs, validates them by independent rediscovery across calibration windows, and removes them with semantics-preserving compiler passes. The seed artifact of QForge.</p>
+            <ul class="tags"><li>Pattern discovery</li><li>Hardware reliability</li><li>Compiler mitigation</li></ul>
+            <a href="https://github.com/qzydustin/qrisk" target="_blank" rel="noreferrer" aria-label="View QRisk on GitHub">View repository <span>↗</span></a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-top"><span class="project-index">02 · Test</span><span class="status">Quantum-native</span></div>
+            <div class="project-icon">Δ</div>
+            <h3>QDiff</h3>
+            <p>Generates semantics-preserving program variants and differentially tests them across quantum software stacks with distribution-aware equivalence checks — the basis for an oracle that tells a sound pass from a poisoned one.</p>
+            <ul class="tags"><li>Differential testing</li><li>Equivalence oracle</li><li>ASE 2021</li></ul>
+            <a href="https://github.com/UCLA-SEAL/QDiff" target="_blank" rel="noreferrer" aria-label="View QDiff on GitHub">View repository <span>↗</span></a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-top"><span class="project-index">03 · Reduce</span><span class="status">Enabling foundation</span></div>
+            <div class="project-icon compact">2→1</div>
+            <h3>DuoReduce</h3>
+            <p>Isolates failures in multi-layer extensible compilation. Its quantum-integration track shrinks a failing circuit and its compiler-pass sequence down to the minimal, actionable reproduction a maintainer needs.</p>
+            <ul class="tags"><li>Bug isolation</li><li>Program reduction</li><li>FSE 2025</li></ul>
+            <a href="https://github.com/UCLA-SEAL/DuoReduce" target="_blank" rel="noreferrer" aria-label="View DuoReduce on GitHub">View repository <span>↗</span></a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-top"><span class="project-index">04 · Evaluate</span><span class="status">Enabling foundation</span></div>
+            <div class="project-icon">α</div>
+            <h3>Argus</h3>
+            <p>A traceable mutation engine. Its quantum-integration track generates quantum-aware mutants that measure whether the test suites guarding the pipeline actually catch regressions, and surface the gaps.</p>
+            <ul class="tags"><li>Mutation testing</li><li>Test-suite evaluation</li><li>Traceability</li></ul>
+            <a href="https://github.com/ucr-riple/Argus" target="_blank" rel="noreferrer" aria-label="View Argus on GitHub">View repository <span>↗</span></a>
+          </article>
+        </div>
+      </section>
+
+      <section class="workflow section" aria-labelledby="workflow-title">
+        <p class="section-label">03 / Building the ecosystem</p>
+        <h2 id="workflow-title">From robustness tooling to shared infrastructure</h2>
+        <p class="workflow-intro">Track 1 funds planning, not product: an open, vendor-neutral pass framework layered on existing interchange formats — a quantum IR (MLIR-style), OpenQASM 3, and QIR — plus the social structure a stochastic, hardware-coupled artifact needs before adoption scales.</p>
+        <div class="ecosystem-grid">
+          <article class="ecosystem-card"><span>01</span><h3>Vendor-neutral pass interface</h3><p>A pass contract that separates portable transformation logic from backend-specific evidence, plugging into vendor pass managers such as Qiskit and t|ket⟩ rather than competing as a new IR.</p></article>
+          <article class="ecosystem-card"><span>02</span><h3>Governance &amp; licensing</h3><p>An open, meritocratic charter and decision-rights matrix, a permissive core license paired with a Developer Certificate of Origin, and a data-sharing agreement for calibration-derived patterns.</p></article>
+          <article class="ecosystem-card"><span>03</span><h3>Security &amp; provenance</h3><p>A threat model for six risk classes, an equivalence oracle plus N-of-M independent cross-window rediscovery as the trust floor, and every accepted pass signed and published with an SBOM and validation evidence.</p></article>
+          <article class="ecosystem-card"><span>04</span><h3>Community &amp; workforce</h3><p>Explicit user and contributor funnels, a Robustness Pass Challenge built on QASMBench and the pattern database, and research experiences across three universities, two of them Hispanic-Serving Institutions.</p></article>
+        </div>
+      </section>
+
+      <section class="contribute section" id="roadmap">
+        <div>
+          <p class="section-label">04 / The ecosystem</p>
+          <h2>Layered on what already exists.</h2>
+          <p class="contribute-lede">QForge is not another compiler. It layers on the interfaces vendors already ship — one shared pass abstraction above Qiskit, t|ket⟩, and the NISQ hardware beneath them.</p>
+        </div>
+        <div class="contribute-copy">
+          <p>A robustness mitigation written once against that abstraction runs everywhere. The ecosystem serves algorithm researchers, tool vendors, national labs and HPC centers, and educators — anyone who needs a compiler pass they did not write to be one they can trust.</p>
+          <div class="link-list">
+            <a href="https://github.com/qzydustin/qrisk" target="_blank" rel="noreferrer"><span>T1 · Robustness passes carrying execution-dependent mitigations, seeded by QRisk</span><b>Exists today</b></a>
+            <a href="#projects"><span>T2 · AI-assisted pattern mining with cross-window verification for provenance</span><b>To scope</b></a>
+            <a href="#ecosystem"><span>T3 · An extensible pass ecosystem where any contributor authors, shares, and composes passes</span><b>To scope</b></a>
+          </div>
+          <p class="contribute-note">Led by Tulane University with the University of Arizona and the University of California, Riverside.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>QForge</span></a>
+      <p>Vendor-neutral passes. Signed provenance. Reliable quantum compilation.</p>
+      <p>© <span id="year"></span> QForge contributors · Tulane · Arizona · UC Riverside</p>
+    </footer>
+  </body>
+</html>
