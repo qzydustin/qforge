@@ -1,0 +1,21 @@
+{
+  "ibm_quantum": {
+    "channel": "ibm_cloud",
+    "backend": "ibm_fez",
+    "min_remaining_seconds": 15,
+    "accounts": [
+      {
+        "name": "local-account",
+        "instance": "your-service-instance",
+        "token": "REPLACE_WITH_YOUR_IBM_QUANTUM_TOKEN"
+      }
+    ]
+  },
+  "execution": {
+    "shots": 8192,
+    "optimization_level": 3,
+    "delta_debug": {
+      "moments_per_segment": 3
+    }
+  }
+}

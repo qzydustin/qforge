@@ -1,0 +1,17 @@
+convert-cf-to-llvm
+sroa
+arith-emulate-wide-int
+inline
+convert-scf-to-cf
+lower-affine
+convert-arith-to-llvm
+expand-strided-metadata
+finalize-memref-to-llvm
+lower-affine
+convert-func-to-llvm
+convert-arith-to-llvm
+reconcile-unrealized-casts
+convert-cf-to-llvm
+arith-emulate-wide-int
+inline
+convert-scf-to-cf

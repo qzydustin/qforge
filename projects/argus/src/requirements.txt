@@ -1,0 +1,22 @@
+# Python Random Code Mutation Engine - Requirements
+# Version: v2.1.1 (Fixed)
+
+# Core dependencies
+# This project uses only Python standard library; no external dependencies
+
+# Optional dependencies (for development and testing)
+pytest>=7.0.0          # Unit testing framework
+coverage>=6.0.0         # Code coverage analysis
+black>=22.0.0           # Code formatting
+flake8>=4.0.0           # Code style checks
+mypy>=0.950             # Type checking
+
+# Development environment dependencies
+setuptools>=60.0.0      # Package management
+wheel>=0.37.0           # Package build
+twine>=4.0.0            # Package publishing
+
+# Notes:
+# 1. Core functionality requires no external dependencies
+# 2. Optional deps are only for development, testing and code quality checks
+# 3. Python version requirement: 3.9+

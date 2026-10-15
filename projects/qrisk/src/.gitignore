@@ -1,0 +1,12 @@
+# IBM credentials — never commit
+config/quantum_config.json
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+
+# Local scratch
+*.log
+.DS_Store
