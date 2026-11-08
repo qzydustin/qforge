@@ -64,7 +64,7 @@ def contact_verilog_code(filename_list):
     for filename in filename_list:
         if not ("sv" in filename):
             filename = filename + ".sv"
-        with open(filename, "r") as file:
+        with open(filename, "r", encoding="utf-8") as file:
             contact_code = contact_code + file.read()
     return contact_code
 
@@ -160,7 +160,7 @@ def verilog_execute(code: str) -> (bool, str):
     try:
         output = subprocess.check_output(["./obj_dir/V" + verilog_filename[0][:-3]], stderr=subprocess.STDOUT,
                                          text=True)
-        with open(output_log_file, "w") as f:
+        with open(output_log_file, "w", encoding="utf-8") as f:
             print("compilation output:" + output)
             f.write(output)
     except subprocess.CalledProcessError as error:
@@ -187,7 +187,7 @@ def test_ir_code(code: str, initial_error: str = None, verilog_execution=False) 
     global compiler_variants
     randomname = random.randint(1, 100000000)
     MLIR_filename = "tmp/tmp" + str(randomname) + ".mlir"
-    with open(MLIR_filename, "w") as f:
+    with open(MLIR_filename, "w", encoding="utf-8") as f:
         f.write(code)
         f.close()
     generated_verilog_code = set()
@@ -237,7 +237,7 @@ def test_ir_code(code: str, initial_error: str = None, verilog_execution=False) 
             output = subprocess.check_output([execute_compiler,
                                               "-pass-pipeline=builtin.module(" + ','.join(compiler) + ")",
                                               MLIR_filename], stderr=subprocess.STDOUT, text=True)
-            with open(output_log_file, "w") as f:
+            with open(output_log_file, "w", encoding="utf-8") as f:
                 f.write(output)
 
             if original_error != "True":
@@ -371,9 +371,9 @@ if __name__ == '__main__':
     original_ir_code_file = sys.argv[1]
     execute_compiler = sys.argv[2]
     Pass_file = sys.argv[3]
-    f = open(original_ir_code_file, "r")
+    f = open(original_ir_code_file, "r", encoding="utf-8")
     original_ir_code = f.read()
-    f = open(Pass_file, "r")
+    f = open(Pass_file, "r", encoding="utf-8")
     PASS_PHASES = f.read().strip().split('\n')
     para = int(sys.argv[4])
     try:
